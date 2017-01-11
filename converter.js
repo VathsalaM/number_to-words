@@ -13,7 +13,6 @@ var split_number = function(number){
 }
 
 var get_word = function(num,i,list){
-	console.log(list)
 	return place.hundreds_place_arrangment[i](num,list[i-1])
 }
 
@@ -25,11 +24,9 @@ var format_hundreth_place = function(place_values){
 var convert_to_hundreds = function(number_str){
 	var reversed_str = number_str.split('').reverse();
 	var hundreds_str = reversed_str.map(get_word)
-	console.log("====",hundreds_str)
-	hundreds_str = (hundreds_str[1]=='1')?hundreds_str.slice(0,hundreds_str.length-1):hundreds_str;
-	hundreds_str = hundreds_str.filter(remove_empty_strs).reverse();
-	console.log(hundreds_str)
-	return format_hundreth_place(hundreds_str).join(' ');
+	hundreds_str = (reversed_str[1]=='1')?hundreds_str.slice(1,hundreds_str.length):hundreds_str;
+	hundreds_str =  hundreds_str.filter(remove_empty_strs).reverse()
+	return (reversed_str.length==3)?format_hundreth_place(hundreds_str).join(' '):hundreds_str.join(' ');
 }
 
 var add_place_holder = function(value,i){

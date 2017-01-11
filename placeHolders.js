@@ -45,7 +45,7 @@ var tens_place = function(tens_value,ones_value){
 }
 
 var hundreds_place = function(hundres_value){
-	return ones_place(hundres_value) + ' hundred';
+	return  (hundres_value!='0')?ones_place(hundres_value)+' hundred':'';
 }
 
 var thousands_place = function(thousands_value){
