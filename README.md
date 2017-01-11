@@ -11,3 +11,7 @@
     - `node server.js`
 5. Open the app by hitting following url in browser
     - `localhost:8080`
+    
+**Example**
+
+![Alt text](./images/screenshot.png )
